@@ -4,6 +4,14 @@
   padding: 40px 40px 40px 100px;
 }
 
+@media screen and (max-width: 400px) {
+  .banner {
+    width: 100%;
+    height: 300px;
+    padding: 20px 30px;
+  }
+}
+
 .banner h1 {
   font-size: 42px;
   font-weight: 700;
@@ -40,6 +48,12 @@
           align-items: center;
   border: 1px solid #A9A9A9;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .form-container {
+    width: 95%;
+  }
 }
 
 .form-container h1 {
@@ -98,6 +112,14 @@
   margin-top: 50px;
 }
 
+@media screen and (max-width: 400px) {
+  .main-todo {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
 .main-todo > h1 {
   margin-bottom: 25px;
   text-align: center;
@@ -130,6 +152,12 @@
   width: 66%;
 }
 
+@media screen and (max-width: 400px) {
+  .main-todo .add-todo .grup {
+    width: 100%;
+  }
+}
+
 .main-todo .add-todo .grup input {
   display: block;
   font-size: 18px;
@@ -137,6 +165,12 @@
   width: 100%;
   border: none;
   outline: none;
+}
+
+@media screen and (max-width: 400px) {
+  .main-todo .add-todo .grup input {
+    width: 100%;
+  }
 }
 
 .main-todo .add-todo .grup button {
@@ -265,6 +299,12 @@ nav {
   padding: 10px 20px;
 }
 
+@media screen and (max-width: 400px) {
+  nav {
+    width: 100%;
+  }
+}
+
 nav a.logo {
   font-size: 20px;
   font-weight: 700;
@@ -328,5 +368,11 @@ nav .links a:not(:last-child) {
 main {
   width: 1024px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

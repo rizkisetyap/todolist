@@ -1,7 +1,9 @@
 console.log('hello wordl');
 
-const flash = document.querySelector('.flash-msg')
-const flash_close = flash.querySelector('.close');
+const flash = document.querySelector('.flash-msg') || null;
+if(flash){
+  const flash_close = flash.querySelector('.close');
+  flash_close.addEventListener('click',() => flash.style.display = 'none');
+}
 
-flash_close.addEventListener('click',() => flash.style.display = 'none');
 

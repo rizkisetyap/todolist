@@ -38,6 +38,9 @@ nav {
   width: 80%;
   margin: 0 auto;
   padding: 10px 20px;
+  @media screen and(max-width: 400px){
+    width: 100%;
+  }
   // logo
   a.logo {
     font-size: 20px;
@@ -94,4 +97,7 @@ nav {
 main {
   width: 1024px;
   margin: 0 auto;
+  @media screen and(max-width: 400px){
+    width: 100%;
+  }
 }

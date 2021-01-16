@@ -6,6 +6,11 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  @media screen and(max-width: 400px){
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
   > h1 {
     margin-bottom: 25px;
     text-align: center;
@@ -21,6 +26,9 @@
       justify-content: space-around;
       border: 3px solid $info;
       width: 66%;
+      @media screen and(max-width: 400px){
+    width: 100%;
+  }
       input {
         display: block;
         font-size: 18px;
@@ -28,6 +36,9 @@
         width: 100%;
         border: none;
         outline: none;
+        @media screen and(max-width: 400px){
+    width: 100%;
+  }
       }
       button {
         background-color: $success;
