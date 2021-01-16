@@ -1,0 +1,332 @@
+.banner {
+  height: 500px;
+  background-color: #afeeee;
+  padding: 40px 40px 40px 100px;
+}
+
+.banner h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.banner a {
+  margin-top: 20px;
+  background-color: #5bc0de;
+  color: #ffffff !important;
+  font-size: 18px;
+  padding: 8px 22px;
+  border-radius: 20px;
+}
+
+.form-container {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #A9A9A9;
+  border-radius: 20px;
+}
+
+.form-container h1 {
+  margin-top: 30px;
+}
+
+.form-container form {
+  width: 80%;
+  padding: 20px;
+}
+
+.form-container form .form-group {
+  width: 100%;
+}
+
+.form-container form .form-group:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.form-container form .form-group label, .form-container form .form-group input {
+  display: block;
+  width: 100%;
+}
+
+.form-container form .form-group input {
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.form-container form button {
+  font-size: 18px;
+  padding: 5px 25px;
+  margin: 15px 0;
+}
+
+.form-container form p > a {
+  color: blue;
+}
+
+.main-todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 66%;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
+
+.main-todo > h1 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.main-todo .add-todo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-todo .add-todo .grup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 3px solid #5bc0de;
+  width: 66%;
+}
+
+.main-todo .add-todo .grup input {
+  display: block;
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.main-todo .add-todo .grup button {
+  background-color: #22bb33;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 15px;
+  color: #fff;
+}
+
+.main-todo .add-todo label[for="due_date"] {
+  font-size: 18px;
+  margin: 15px 0 5px;
+}
+
+.main-todo .add-todo input[type="date"] {
+  width: 66%;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.main-todo .main-list {
+  margin-top: 25px;
+  width: 100%;
+  min-height: 40vh;
+}
+
+.main-todo .main-list ul {
+  display: block;
+  width: 100%;
+  border: 1px solid #aaa;
+}
+
+.main-todo .main-list ul li:nth-child(odd) {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.main-todo .main-list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style-type: none;
+  padding: 3px 25px;
+  height: 100%;
+  position: relative;
+  color: #1d1d1d;
+}
+
+.main-todo .main-list ul li .action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-todo .main-list ul li .action a.delete {
+  color: #bb2124;
+  margin-left: 10px;
+}
+
+.main-todo .main-list ul li .action a.mark {
+  color: #1b46d4;
+}
+
+.completed {
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  background-color: black;
+  top: 50%;
+  left: 1%;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2F4F4F;
+  line-height: 1.3;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: #A9A9A9;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #000;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+nav a.logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav .links a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.flash-msg {
+  width: 100%;
+  margin: 10px 0;
+  min-height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 5px 15px;
+}
+
+.flash-msg > p {
+  text-align: center;
+  color: #3f3434;
+  margin-right: 10px;
+}
+
+.flash-msg > span {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-weight: 700;
+  color: #2F4F4F;
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.flash-msg > span:hover {
+  color: #ebebeb;
+}
+
+.flash-warning {
+  background-color: #f0ad4e;
+}
+
+.flash-danger {
+  background-color: #bb2124;
+}
+
+.flash-info {
+  background-color: #5bc0de;
+}
+
+main {
+  width: 1024px;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=style.css.map */

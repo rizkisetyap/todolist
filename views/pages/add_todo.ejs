@@ -1,0 +1,16 @@
+<div class="form-container">
+  <h1>Add List</h1>
+  <form id="login" action="/todo/add" method="POST">
+    <%- include('../partials/flash_msg') %>
+    
+    <div class="form-group">
+      <label for="name">Judul</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="due_date">Deadline</label>
+      <input placeholder="deadline" type="date" id="due_date" name="due_date">
+    </div>
+    <button type="submit">add</button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<%- include('../partials/flash_msg') %>
+<div class="main-todo">
+<h1>Your Todo List</h1>
+  <form class="add-todo" action="/todo/add" method="POST">
+    <div class="grup">
+      <input required type="text" id="name" name="name" placeholder="nama list">
+      <button type="submit">Tambah</button>
+
+    </div>
+    <label for="due_date">Deadline</label>
+    <input required placeholder="deadline" type="date" id="due_date" name="due_date">
+  </form>
+  <div class="main-list">
+
+<% if(todos.length > 0) {%>
+    <ul>
+    <% todos.forEach(todo => {%>
+      <li><%= todo.name %>
+        <% if(todo.isCompleted){%>
+          <div class="completed"></div>
+        <% } %>
+        <div class="action">
+          <% if(!todo.isCompleted){%>
+          <a class="mark" href="/todo/update/<%= todo._id %>">marks as done</a>
+        <% } %>
+          <a class="delete" href="/todo/delete/<%= todo._id %>">delete</a>
+
+        </div>
+      </li>
+
+    <%})%>
+    </ul>
+  <%} else {%>
+    <p>Kamu belum punya list! tambahkan sekarang!!</p>
+  <%}%>
+  </div>
+</div>

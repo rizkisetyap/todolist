@@ -1,0 +1,11 @@
+<% const {notify} = getMessages()
+
+    if(notify){
+      notify.forEach(({type, message}) => {%>
+        <div class="<%= `flash-msg flash-${type}` %>">
+          <p><%= message %></p>
+        
+        <span class="close">&times;</span>
+      </div>
+    <%})}
+  %>
