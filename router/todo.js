@@ -3,9 +3,24 @@ const TodoList = require('../model/todo');
 const {todoValidation} = require('../validation/validate');
 const auth = require('./verifytoken');
 
+// utils
+const getMinDate = () => {
+  const minDate = new Date(Date.now());
+  const month = () => {
+    if(minDate.getMonth() < 9){
+      return `0${minDate.getMonth() + 1}`
+    }else {
+      return `${minDate.getMonth() + 1}`
+    }
+  }
+  const formatedDate = `${minDate.getFullYear()}-${month()}-${minDate.getDate()}T${minDate.toLocaleTimeString()}`;
+
+  return formatedDate;
+}
+
 router.get('/',auth,async(req, res) => {
   todos = await TodoList.find({_creator: req.user._id});
-  res.render('pages/todolist',{title: 'Todo', user: req.user,todos});
+  res.render('pages/todolist',{title: 'Todo', user: req.user,todos,formatedDate : getMinDate()});
 });
 
 router.post('/add',auth,async (req, res) => {
@@ -15,9 +30,9 @@ router.post('/add',auth,async (req, res) => {
     return res.redirect('/todo/add');
   }
   const todo = new TodoList({
-    name: req.body.name,
+    judul: req.body.judul,
     _creator: req.user._id,
-    due_date: req.body.due_date,
+    deadline: req.body.deadline
   })
   try {
     const newList = await todo.save();
@@ -26,10 +41,11 @@ router.post('/add',auth,async (req, res) => {
       return req.redirect('/todo/add');
     }
     
-    req.flash('notify',{type: 'info', message:'sukses menambahkan'});
+    req.flash('notify',{type: 'success', message:'sukses menambahkan'});
     res.redirect('/todo')
   } catch (error) {
-    return res.status(400).redirect('/')
+    req.flash('notify',{type: 'warning',message: error.message})
+    return res.status(400).redirect('/todo')
   }
 })
 

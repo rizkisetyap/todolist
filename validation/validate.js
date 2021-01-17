@@ -20,9 +20,8 @@ const loginValidation = data => {
 
 const todo_validation = data => {
   const schema = joi.object({
-    name: joi.string().required().min(3).max(512),
-    due_date: joi.date().required()
-
+    judul: joi.string().required().min(3).max(512),
+    deadline: joi.required(),
   })
   return schema.validate(data);
 }

@@ -1,37 +1,73 @@
-<%- include('../partials/flash_msg') %>
-<div class="main-todo">
-<h1>Your Todo List</h1>
-  <form class="add-todo" action="/todo/add" method="POST">
-    <div class="grup">
-      <input required type="text" id="name" name="name" placeholder="nama list">
-      <button type="submit">Tambah</button>
+<div class="container mt-5">
+  <div class="row justify-content-md-center">
+    <div class="col-md-8">
+      <h3 class="text-center">Your List</h3>
+      <form action="/todo/add" method="POST">
+        <div class="row align-items-end  mt-5">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="judul">Judul</label>
+              <input type="text"class="form-control" id="judul" name="judul" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="deadline">Deadline</label>
+              <input 
+              type="datetime-local"
+              class="form-control" 
+              id="deadline" 
+              name="deadline"
+              value="<%= formatedDate %>"
+              min="<%= formatedDate %>"
+              required />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Tambah</button>
 
-    </div>
-    <label for="due_date">Deadline</label>
-    <input required placeholder="deadline" type="date" id="due_date" name="due_date">
-  </form>
-  <div class="main-list">
-
-<% if(todos.length > 0) {%>
-    <ul>
-    <% todos.forEach(todo => {%>
-      <li><%= todo.name %>
-        <% if(todo.isCompleted){%>
-          <div class="completed"></div>
-        <% } %>
-        <div class="action">
-          <% if(!todo.isCompleted){%>
-          <a class="mark" href="/todo/update/<%= todo._id %>">marks as done</a>
-        <% } %>
-          <a class="delete" href="/todo/delete/<%= todo._id %>">delete</a>
-
+            </div>
+          </div>
         </div>
-      </li>
-
-    <%})%>
-    </ul>
-  <%} else {%>
-    <p>Kamu belum punya list! tambahkan sekarang!!</p>
-  <%}%>
+      </form>
+      <%- include('../partials/flash_msg') %>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Task</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(todos.length > 0){
+            todos.forEach((todo, i) => {
+              const c = todo.isCompleted?"selesai": "belum"
+              %>
+                <tr class="<%= c %> text-dark">
+                  <th scope="row"><%= i + 1 %></th>
+                  <td><strong><%= todo.judul %></strong></td>
+                  <td><%= todo.deadline.toLocaleTimeString([],{hour: '2-digit',minute: '2-digit'})%>  <%= todo.deadline.toLocaleDateString()%></td>
+                  <td>
+                    <% if(todo.isCompleted){%>
+                      Sudah dikerjakan
+                    <%}else{%>
+                      Belum dikerjakan
+                    <%}%>
+                  </td>
+                  <td class="actions">
+                    <a title="delete" class="btn btn-danger btn-sm" href="/todo/delete/<%=todo._id%>"><i class="fas fa-trash"></i></a>
+                    <%if(!todo.isCompleted){%>
+                      <a title="tandai sudah selesai" class="btn btn-info btn-sm" href="/todo/update/<%=todo._id%>"><i class="fas fa-check-square"></i></a>                    
+                    <%}%>
+                  </td>
+                </tr>
+              <%})}%>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

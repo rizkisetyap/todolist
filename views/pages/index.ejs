@@ -1,10 +1,18 @@
-  <div class="banner">
-    <h1>Make your Live Easier</h1>
-    <p>Create your Todo List Now</p>
-    <% if(user){ %>
-      <a href="/todo">create todo list</a>
-      <%} else{ %>
-    <a href="/login">Login</a>
+<div class="container">
+  <div class="jumbotron">
+    <h2 class="display-4" style="font-weight: 500;">Create Your Todo List Now</h2>
+    <h4 class="lead mt-5">Apa Itu <strong>Todo List?</strong></h4>
+    <p class="lead text-justify">
+      To do List adalah bagian dari perencanaan yang berupa sekumpulan daftar tugas yang perlu diselesaikan dalam rentan waktu tertentu. Dibuat dalam rentan waktu tertentu (harian, mingguan atau bulanan).
+      <br/>
+      Psikolog dan Penulis, Dr. David Cohen yang dikutip dari laman theguardian menyatakan setidaknya ada tiga alasan ia membuat to-do-list yaitu mengurangi keribetan dalam mengatur tugas, membuat tugas menjadi terstruktur, dan memastikan rencana bisa dijalankan. Pada akhirnya to-do-list adalah bukti akan apa yang sudah dicapai dalam kegiatan harian, mingguan, atau bulanan.
+    </p>
+    <hr class="my-4">
+    <% if(user){%>
+      <a class="btn btn-primary btn-lg" href="/todo" role="button">Get Started</a>  
+    <%}else {%>
+    <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
     <%}%>
   </div>
+</div>
 

@@ -1,0 +1,39 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.selesai {
+  background-color: #15fd34c2;
+}
+
+.belum {
+  background-color: #fbc81fc9;
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  .jumbotron > h2 {
+    font-size: 24px;
+  }
+  .jumbotron > p {
+    font-size: 14px;
+  }
+  .jumbotron > a {
+    font-size: 14px;
+  }
+  table.table {
+    font-size: 10px;
+  }
+}
+
+td.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=responsive.css.map */

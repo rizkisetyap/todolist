@@ -3,21 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/responsive.css">
   <title><%= title %></title>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/" class="logo">My Todo List</a>
-      <div class="links">
-        <% if(user) {%>
-          <a href="/todo"> <%= user.nama %></a>
-          <a href="/user/logout">logout</a>
-          <%} else {%>
-            <a href="/login">Login</a>
-            <a href="/todo">Create todo list</a>
-        <% } %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">TodoList</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Contact</a>
+            <% if(user) {%>
+            <a class="nav-link" href="/todo"> <%= user.nama %></a>
+            <a class="nav-link" href="/user/logout">logout</a>
+            <%} else {%>
+              <a class="nav-link" href="/login">Login</a>
+          <% } %>
+          </div>
+        </div>
+
       </div>
     </nav>
   </header>
@@ -27,6 +40,8 @@
     <%- body %>
 
   </main>
-    <script src="/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </body>
   </html>

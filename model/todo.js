@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TodoSchema = new Schema({
-  name: {
+  judul: {
     type: String,
     min: 3,
     max: 512,
@@ -12,14 +12,14 @@ const TodoSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
-  due_date: {
-    type: Date,
-    required: true
-  },
   isCompleted: {
     type: Boolean,
     default: false,
     required: true
+  },
+  deadline: {
+    type: Date,
+    required: true,
   },
   createdAt: {
     type: Date,
